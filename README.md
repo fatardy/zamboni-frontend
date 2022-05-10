@@ -28,9 +28,9 @@
 [x] /vehicle
 [x] /vehicle/create
 
-[ ] /trip
+[x] /trip
 
-[ ] /invoice
+[x] /invoice
 
 [ ] /payment
 
