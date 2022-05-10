@@ -13,16 +13,18 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let userId;
-    if (CONFIG.USER_ID) {
-      userId = CONFIG.USER_ID;
+    let token;
+    if (CONFIG.AUTH_TOKEN) {
+      token = CONFIG.AUTH_TOKEN;
     } else {
-      userId = localStorage.getItem('userId');
+      token = localStorage.getItem('@token');
     }
 
-    if (userId == null) {
+    if (token == null) {
       navigate('/login');
     }
+
+    CONFIG.AUTH_TOKEN = token;
   }, []);
 
   return (
@@ -40,31 +42,15 @@ export default function App() {
               ])}
               to="/"
             >
-              Market
+              Home
             </NavLink>
             <NavLink
               className={({ isActive }) => classNames([
                 { [styles.active]: isActive },
               ])}
-              to="/portfolio"
+              to="/trips"
             >
-              Portfolio
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => classNames([
-                { [styles.active]: isActive },
-              ])}
-              to="/limit-order"
-            >
-              Limit Orders
-            </NavLink>
-            <NavLink
-              className={({ isActive }) => classNames([
-                { [styles.active]: isActive },
-              ])}
-              to="/history"
-            >
-              History
+              Trips
             </NavLink>
             <NavLink
               className={({ isActive }) => classNames([

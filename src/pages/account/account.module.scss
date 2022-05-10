@@ -1,0 +1,100 @@
+@import '../../styles/colors.scss';
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .content {
+        margin-top: 48px;
+        width: 33vw;
+        
+        h2 {
+            margin: 0 0 32px 0;
+        }
+        h1 {
+            font-weight: 400;
+        }
+
+        .detail {
+            .bunch {
+                margin: 0 0 16px 0;
+                .label {
+                    margin: 0 0 4px 0;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    color: $text-light-gray;
+                    // font-weight: bold;
+                }
+                .value {
+                    color: $text-dark-gray;
+                    margin: 0;
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .actionCard {
+            border-radius: $card-border-radius;
+            border: 1px solid $border-color;
+            margin: 48px 16px 16px 16px; 
+            padding:  32px 16px 16px 16px;
+            background-color: #fff;
+            // transition: color 0.15s ease, border-color 0.15s ease;
+            // transition: box-shadow .2s ease;
+
+            .top {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                h1, h2 {
+                    margin: 0 0 24px 0;
+                }
+            }
+
+            .bottom {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                column-gap: 16px;
+            }
+        }
+
+        .actionCard:focus,
+        .actionCard.hover {
+            box-shadow: $card-hover-box-shadow;
+            border: 1px solid transparent;
+        }
+    }
+}
+
+.modal {
+    border-radius: $card-border-radius;
+    border: 1px solid $border-color;
+    margin: 48px 16px 16px 16px; 
+    padding:  32px 16px 16px 16px;
+    background-color: #fff;
+    box-shadow: $card-hover-box-shadow;
+
+    h2 {
+        margin: 32px 0 0 0 !important;
+    }
+
+    .bottom {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        column-gap: 16px;
+        max-width: 100%;
+    }
+
+    p.errorMsg { 
+        color: $error-color;
+        margin-top: 24px;
+    }
+}
