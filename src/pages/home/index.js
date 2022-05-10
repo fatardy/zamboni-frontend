@@ -7,6 +7,7 @@ import styles from './home.module.scss';
 import { getAllLocations, getAllVehicles } from '../../services/user/public';
 import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
+import { differenceInHours, subDays } from 'date-fns';
 
 export default function Home() {
   const [locations, setLocations] = useState([
@@ -15,6 +16,7 @@ export default function Home() {
   const [selectedLocation, setSelectedLocation] = useState('Select Pickup Location');
   const [pickDate, setPickDate] = useState(new Date());
   const [dropDate, setDropDate] = useState(new Date());
+  const [vehicles, setVehicles] = useState([]);
 
   const handleChange = (event) => {
     setSelectedLocation(event.target.value);
@@ -32,8 +34,9 @@ export default function Home() {
 
   async function fetchAllVehicles() {
     try {
-      const { data } = await getAllVehicles();
-      console.log(data?.data);
+      const { data } = await getAllVehicles({ locId: selectedLocation });
+      // console.log(data?.data);
+      setVehicles(data?.data);
     } catch (err) {
       toast(err);
     }
@@ -42,6 +45,10 @@ export default function Home() {
   useEffect(() => {
     fetchAllLocations();
   }, []);
+
+  // useEffect(() => {
+  //   fetchAllVehicles();
+  // }, [selectedLocation]);
 
   return (
     <div className={styles.container}>
@@ -83,6 +90,43 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className={styles.list}>
+        {vehicles.map((x) => (
+          <div className={styles.box} key={x.vehId}>
+            <div className={styles.imgCont}>
+              <img className={styles.img || './cars/2.png'} src={x.avatar} alt="img" />
+            </div>
+            <div className={styles.right}>
+              <div className={styles.detail}>
+                <p className={styles.vtName}>{x.vehName}</p>
+                <p className={styles.make}>{x.make}</p>
+                <p className={styles.model}>{x.model}</p>
+                <p className={styles.info}>5 Seats | 1 Boot</p>
+                <p className={styles.infoBtn}>View Vehicle Information</p>
+              </div>
+              <div className={styles.action}>
+                <div className={styles.price}>
+                  <p className={styles.total}>
+                    $
+                    {parseInt(x.rate, 10) * (differenceInHours(dropDate, pickDate) / 24)}
+                  </p>
+                  <p className={styles.day}>
+                    $
+                    {parseInt(x.rate, 10)}
+                    {' '}
+                    / Day
+                  </p>
+                </div>
+                <div className={styles.btn}>
+                  <Button solid title="  Book Car  " />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }

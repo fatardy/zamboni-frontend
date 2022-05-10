@@ -13,6 +13,7 @@ export function create({
   licensePlate,
   locId,
   vtId,
+  avatar,
 }) {
   return axiosClient.post(`${prefix}/`, {
     vehId,
@@ -21,6 +22,7 @@ export function create({
     licensePlate,
     locId,
     vtId,
+    avatar,
   });
 }
 
@@ -31,6 +33,7 @@ export function update({
   licensePlate,
   locId,
   vtId,
+  avatar,
 }) {
   return axiosClient.post(`${prefix}/`, {
     vehId,
@@ -39,6 +42,7 @@ export function update({
     licensePlate,
     locId,
     vtId,
+    avatar,
   });
 }
 

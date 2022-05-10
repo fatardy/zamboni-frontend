@@ -21,7 +21,7 @@ export default function App() {
     }
 
     if (token == null) {
-      navigate('/login');
+      // navigate('/login');
     }
 
     CONFIG.AUTH_TOKEN = token;

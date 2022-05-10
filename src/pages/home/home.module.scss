@@ -4,7 +4,7 @@
     margin: 32px 0;
 
     .header {
-        background-color: $primary-color;
+        background-color: $secondary-color;
         padding: 48px 0 42px 0;
         border-radius: 8px;
 
@@ -41,5 +41,103 @@
             }
             
         }
+    }
+
+    .list {
+        margin: 32px 0;
+        .box {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            padding: 24px;
+            margin: 24px;
+            border-radius: 24px;
+            background-color: #fff;
+            border: 1px solid $background-dark-gray-color;
+            transition: color 0.15s ease, border-color 0.15s ease;
+            transition: box-shadow .2s ease;
+    
+            
+            .imgCont {
+                .img {
+                    width: 300px;
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
+            }
+            .right {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                justify-content: space-between;
+                .detail {
+                    margin: 8px 0 0 32px;
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .vtName {
+                        margin: 0px 0 0 0;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    .make {
+                        font-size: 20px;
+                        margin: 8px 0 0 0;
+                    }
+                    .model {
+                        font-size: 16px;
+                        margin: 4px 0 0 0;
+                    }
+                    .info {
+                        margin: 42px 0 0 0;
+                    }
+                    .infoBtn {
+                        margin: 4px 0 0 0;
+                        color: $secondary-color;
+                    }
+                    .infoBtn:hover,
+                    .infoBtn:focus {
+                        cursor: pointer;
+                    }
+                }
+                .action {
+                    display: flex;
+                    align-items: flex-end;
+                    flex-direction: column;
+                    margin: 16px 0 0 0;
+                    // justify-content: center;
+                    // flex: 1;
+                    .price {
+                        margin: 0 0 12px 0;
+                        padding: 0;
+                        p {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .total {
+                            font-size: 28px;
+                            text-align: right;
+                        }
+                        .day {
+                            font-size: 16px;
+                            margin: 4px 0 8px 0;
+                        }
+                    }
+                    .btn {
+                        height: 40px;
+                    }
+
+                }
+            }
+        }
+        .box:hover,
+        .box:focus,
+        .box:active {
+            box-shadow: $card-hover-box-shadow;
+            border: 1px solid transparent;
+        }
+    
     }
 }

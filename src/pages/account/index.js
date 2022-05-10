@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './account.module.scss';
 import TextInput from '../../components/text-input';
 import { getProfile } from '../../services/user/user';
 import Button from '../../components/button';
 
 export default function Account() {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({});
 
   const fetchUserData = async () => {
@@ -14,7 +17,11 @@ export default function Account() {
       console.log(data?.data);
       setUserData(data?.data);
     } catch (err) {
-      console.log(err);
+      console.log('here', err?.response?.status);
+      if (err?.response?.status === 403) {
+        navigate('/login');
+        toast('Please log in first..');
+      }
     }
   };
 
@@ -35,6 +42,11 @@ export default function Account() {
 
     );
   }
+
+  const logout = () => {
+    localStorage.removeItem('@token');
+    navigate('/login');
+  };
 
   return (
     <div className={styles.container}>
@@ -57,7 +69,7 @@ export default function Account() {
         </div>
         {/* <p>{JSON.stringify(userData)}</p> */}
 
-        <Button solid={false} border title="Logout" />
+        <Button solid={false} border title="Logout" onClick={logout} />
 
       </div>
     </div>

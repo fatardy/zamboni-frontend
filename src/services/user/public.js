@@ -6,6 +6,6 @@ export function getAllLocations() {
   return axiosClient.get(`${prefix}/location`);
 }
 
-export function getAllVehicles() {
-  return axiosClient.get(`${prefix}/vehicle`);
+export function getAllVehicles({ locId }) {
+  return axiosClient.get(`${prefix}/vehicle/${locId}`);
 }

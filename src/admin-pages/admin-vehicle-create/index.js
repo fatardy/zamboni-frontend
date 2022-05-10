@@ -17,6 +17,7 @@ export default function AdminVehicleCreate() {
     licensePlate: '',
     locId: '',
     vtId: '',
+    avatar: '',
   });
 
   const fetchCreate = async () => {
@@ -52,6 +53,7 @@ export default function AdminVehicleCreate() {
             <TextInput label="License Plate (10)" value={data.licensePlate} onChange={(e) => { setData({ ...data, licensePlate: e.target.value }); }} />
             <TextInput label="Location ID (*)" value={data.locId} onChange={(e) => { setData({ ...data, locId: e.target.value }); }} />
             <TextInput label="Vehicle Type ID (*)" value={data.vtId} onChange={(e) => { setData({ ...data, vtId: e.target.value }); }} />
+            <TextInput label="Avatar" value={data.avatar} onChange={(e) => { setData({ ...data, avatar: e.target.value }); }} />
           </div>
           <div className={styles.btn}>
             <Button solid title="Create" onClick={btnClick} />
