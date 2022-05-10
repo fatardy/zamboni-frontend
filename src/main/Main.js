@@ -23,6 +23,10 @@ import AdminVehicle from '../admin-pages/admin-vehicle';
 import AdminVehicleCreate from '../admin-pages/admin-vehicle-create';
 import AdminTrip from '../admin-pages/admin-trip';
 import AdminInvoice from '../admin-pages/admin-invoice';
+import AdminCoupon from '../admin-pages/admin-coupon';
+import AdminCouponCreate from '../admin-pages/admin-coupon-create';
+import AdminCouponAddUser from '../admin-pages/admin-coupon-add-user';
+import AdminCouponUsers from '../admin-pages/admin-coupon-users';
 
 export default function Main() {
   return (
@@ -46,6 +50,10 @@ export default function Main() {
             <Route path="/admin/vehicle/create" element={<AdminVehicleCreate />} />
             <Route path="/admin/trip" element={<AdminTrip />} />
             <Route path="/admin/invoice" element={<AdminInvoice />} />
+            <Route path="/admin/coupon" element={<AdminCoupon />} />
+            <Route path="/admin/coupon/create" element={<AdminCouponCreate />} />
+            <Route path="/admin/coupon/add-user" element={<AdminCouponAddUser />} />
+            <Route path="/admin/coupon/users" element={<AdminCouponUsers />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/verify-otp" element={<AdminVerifyOtp />} />

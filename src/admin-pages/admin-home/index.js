@@ -52,10 +52,10 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/payment">
+          <Link to="/admin/user">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
-              <p className={navDivStyles.value}>Payments</p>
+              <p className={navDivStyles.value}>Users</p>
             </div>
           </Link>
         </div>
@@ -78,19 +78,6 @@ export default function AdminHome() {
 
       </div>
 
-      <div className={navDivStyles.navContainer}>
-        <div className={navDivStyles.outerBox}>
-          <Link to="/admin/user">
-            <div className={navDivStyles.box}>
-              <p className={navDivStyles.title}>→</p>
-              <p className={navDivStyles.value}>Users</p>
-            </div>
-          </Link>
-        </div>
-        <div className={navDivStyles.outerBox} />
-        <div className={navDivStyles.outerBox} />
-        <div className={navDivStyles.outerBox} />
-      </div>
     </div>
   );
 }

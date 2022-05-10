@@ -48,8 +48,12 @@ export function addToUser({
   coupId,
   userId,
 }) {
-  return axiosClient.post(`${prefix}/`, {
+  return axiosClient.post(`${prefix}/add`, {
     coupId,
     userId,
   });
+}
+
+export function usersCoupons() {
+  return axiosClient.get(`${prefix}/users`);
 }

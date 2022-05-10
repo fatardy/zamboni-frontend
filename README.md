@@ -34,9 +34,9 @@
 
 [ ] /payment
 
-[ ] /coupon
-[ ] /coupon/create
-[ ] /coupon/add
+[x] /coupon
+[x] /coupon/create
+[x] /coupon/add
 
 [ ] /firm
 [ ] /firm/create
