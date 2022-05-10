@@ -4,12 +4,12 @@ import { toast } from 'react-toastify';
 import styles from '../../styles/login.module.scss';
 import TextInput from '../../components/text-input';
 import Button from '../../components/button';
-import { authorize } from '../../services/user/auth';
+import { authorize } from '../../services/admin/auth';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('asdf@asdf.com');
+  const [email, setEmail] = useState('admin@zamboni.com');
   const [errorMsg, setErrorMsg] = useState('');
 
   function validateEmail(e) {
@@ -32,7 +32,7 @@ export default function AdminLogin() {
 
       toast('Please enter the OTP sent to your email!');
 
-      navigate('/verify-otp', { state: { email } });
+      navigate('/admin/verify-otp', { state: { email } });
     } catch (err) {
       const e = err?.response?.data?.error?.message;
       // console.log('err', e);
@@ -51,7 +51,11 @@ export default function AdminLogin() {
       <div className={styles.card}>
         <div className={styles.header}>
           <p className={styles.text}>Welcome to</p>
-          <p className={styles.logo}>Zamboni</p>
+          <p className={styles.logo}>
+            Zamboni
+            {' '}
+            <i>Admin</i>
+          </p>
         </div>
         <div className={styles.form}>
           <TextInput label="Email" value={email} onChange={(e) => { setEmail(e.target.value); clear(); }} />

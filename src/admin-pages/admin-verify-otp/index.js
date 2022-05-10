@@ -6,7 +6,7 @@ import TextInput from '../../components/text-input';
 import Button from '../../components/button';
 // import { createUser } from '../../services/user';
 import CONFIG from '../../main/config';
-import { sendOtp, verifyOtp } from '../../services/user/auth';
+import { sendOtp, verifyOtp } from '../../services/admin/auth';
 
 export default function AdminVerifyOtp() {
   const { state: { email } } = useLocation();
@@ -28,16 +28,15 @@ export default function AdminVerifyOtp() {
       localStorage.setItem('@token', data.access_token);
       const userId = data?.data?.userId;
       CONFIG.AUTH_TOKEN = data.access_token;
+      CONFIG.IS_ADMIN = true;
       CONFIG.USER_ID = userId;
-      if (data.isNewUser) {
-        navigate('/onboarding');
-        return;
-      }
-      navigate('/');
+
+      navigate('/admin');
     } catch (err) {
       const e = err?.response?.data?.error?.message;
       // console.log('err', e);
       setErrorMsg(e || 'Something went wrong.. ');
+      toast('Please make sure you\'re authorized as an Admin!');
     }
   };
 
