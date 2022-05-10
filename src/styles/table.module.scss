@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, 
+th {
+    border: 1px solid $background-gray-color;
+    text-align: left;
+    padding: 8px 8px;
+    p {
+        font-family: 'Raleway', sans-serif;
+    }
+}
+
+tr:nth-child(even) {
+    background-color: $background-dark-gray-color;
+}

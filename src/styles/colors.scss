@@ -1,0 +1,27 @@
+$text-white: #ffffff;
+$text-gray: #999999;
+$text-light-gray: #8c8c8c;
+$text-dark-gray: #4c4c4c;
+
+$max-width: 1024px;
+$max-width-home: 800px;
+
+$primary-color: #8884d8;
+$secondary-color: #d90368;
+$tertiary-color: #00cc66;
+$header-color: rgba(85, 36, 129, 1);
+
+$success-color: #238823;
+$error-color: #d2222d;
+
+$background-gray-color: #fafafa;
+$background-dark-gray-color: #efefef;
+$border-color: #bebebe;
+
+$nav-bg: $background-gray-color;
+$nav-border: 1px solid $background-dark-gray-color;
+$nav-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+// $card-hover-box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+$card-hover-box-shadow: rgba($primary-color, 0.5) 0px 8px 24px, rgba(255, 0, 170, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+$card-border-radius: 10px;

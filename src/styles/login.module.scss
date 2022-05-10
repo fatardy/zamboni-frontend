@@ -1,0 +1,40 @@
+@import './colors.scss';
+
+.container {
+    margin: 64px 0 0 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    .card {
+        width: 33vw;
+        // background-color: rgba($color: $primary-color, $alpha: 0.2);
+        padding: 56px 24px 48px 24px;
+        border-radius: $card-border-radius;
+        border: 1px solid $border-color;
+        box-shadow: $card-hover-box-shadow;
+        p.text {
+            margin: 0;
+        }
+        p.logo {
+            margin: 8px 0 32px 0;
+            font-size: 32px;
+        }
+        p.text2 {
+            margin: -16px 0 48px 0;
+        }
+        .form {
+            
+        }
+        .btn {
+            margin-top: 32px;
+        }
+        .err {
+            text-align: center;
+            margin-top: 16px;
+            .msg {
+                color: $error-color;
+                margin: 0
+            }
+        }
+    }
+}
