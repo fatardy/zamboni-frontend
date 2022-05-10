@@ -13,18 +13,21 @@ import CONFIG from './config';
 export default function AdminApp() {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   let userId;
-  //   if (CONFIG.USER_ID) {
-  //     userId = CONFIG.USER_ID;
-  //   } else {
-  //     userId = localStorage.getItem('userId');
-  //   }
+  useEffect(() => {
+    let token;
+    if (CONFIG.AUTH_TOKEN) {
+      token = CONFIG.AUTH_TOKEN;
+    } else {
+      token = localStorage.getItem('@token');
+    }
 
-  //   if (userId == null) {
-  //     navigate('/login');
-  //   }
-  // }, []);
+    if (token == null) {
+      navigate('/login');
+    }
+
+    // CONFIG.IS_ADMIN = true; why?
+    CONFIG.AUTH_TOKEN = token;
+  }, []);
 
   return (
     <>

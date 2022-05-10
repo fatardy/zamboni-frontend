@@ -13,9 +13,9 @@
 [ ] /trip/all
 
 ### admin
-[ ] /login
-[ ] /verify-otp
-[ ] /
+[x] /login
+[x] /verify-otp
+[x] /
 
 [ ] /users
 
