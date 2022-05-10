@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .content {
+        width: 40vw;
+        margin-bottom: 64px;
+    
+        .backCont {
+            margin: 32px 0;
+    
+            a {
+                transition: font-size 0.1s;
+            }
+            a:focus,
+            a:hover {
+                font-size: 18px;
+                // color: $secondary-color;
+            }
+        }
+    
+        h2 {
+            margin: 48px 0 32px 0;
+        }
+        .btn {
+            margin-top: 32px;
+        }
+        .err {
+            text-align: center;
+            margin-top: 32px;
+            .msg {
+                color: $error-color;
+                margin: 0
+            }
+        }
+    }
+}

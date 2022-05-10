@@ -72,13 +72,10 @@ export default function AdminLocation() {
               <p>Address</p>
             </th>
             <th>
-              <p />
-            </th>
-            <th>
               <p>Created On</p>
             </th>
             <th>
-              <p>Delete</p>
+              <p />
             </th>
           </tr>
         </thead>
@@ -108,7 +105,7 @@ export default function AdminLocation() {
               <td>
                 <Button
                   title="delete"
-                  onClick={() => { fetchDelete({ id: x.locId }); }}
+                  onClick={() => { deleteTap(x.locId); }}
                   solid={false}
                 />
               </td>

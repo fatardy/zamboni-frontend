@@ -16,6 +16,7 @@ import AdminHome from '../admin-pages/admin-home';
 import AdminLogin from '../admin-pages/admin-login';
 import AdminVerifyOtp from '../admin-pages/admin-verify-otp';
 import AdminLocation from '../admin-pages/admin-location';
+import AdminLocationCreate from '../admin-pages/admin-location-create';
 
 export default function Main() {
   return (
@@ -32,6 +33,7 @@ export default function Main() {
           <Route path="/admin" element={<AdminApp />}>
             <Route path="/admin" element={<AdminHome />} />
             <Route path="/admin/location" element={<AdminLocation />} />
+            <Route path="/admin/location/create" element={<AdminLocationCreate />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/verify-otp" element={<AdminVerifyOtp />} />
