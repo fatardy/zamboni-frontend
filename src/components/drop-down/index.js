@@ -2,8 +2,12 @@ import React from 'react';
 import styles from './drop-down.module.scss';
 
 export default function Dropdown({
-  label, value, options, onChange,
+  label,
+  value,
+  options = [],
+  onChange,
 }) {
+  console.log(options);
   return (
     <label htmlFor="select">
       {label}

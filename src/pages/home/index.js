@@ -1,28 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
+import { toast } from 'react-toastify';
 import Button from '../../components/button';
 import Dropdown from '../../components/drop-down';
 import styles from './home.module.scss';
-
+import { getAllLocations, getAllVehicles } from '../../services/user/public';
 import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
 
 export default function Home() {
-  const options = [
-    { label: 'Select Pickup Location', value: 'fruit' },
-    { label: 'Fruit', value: 'fruit' },
-    { label: 'Vegetable', value: 'vegetable' },
-    { label: 'Meat', value: 'meat' },
-  ];
-
-  const [value, setValue] = useState('fruit');
-  // const [date, onChange] = useState(new Date());
+  const [locations, setLocations] = useState([
+    { label: 'Select Pickup Location', value: '0' },
+  ]);
+  const [selectedLocation, setSelectedLocation] = useState('Select Pickup Location');
   const [pickDate, setPickDate] = useState(new Date());
   const [dropDate, setDropDate] = useState(new Date());
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setSelectedLocation(event.target.value);
   };
+
+  async function fetchAllLocations() {
+    try {
+      const { data } = await getAllLocations();
+      const locs = data?.data.map((x) => ({ ...x, label: x.name, value: x.locId }));
+      setLocations([...locations, ...locs]);
+    } catch (err) {
+      toast(err);
+    }
+  }
+
+  async function fetchAllVehicles() {
+    try {
+      const { data } = await getAllVehicles();
+      console.log(data?.data);
+    } catch (err) {
+      toast(err);
+    }
+  }
+
+  useEffect(() => {
+    fetchAllLocations();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -32,8 +51,8 @@ export default function Home() {
           <div className={styles.top}>
             <Dropdown
               label=""
-              options={options}
-              value={value}
+              options={locations}
+              value={selectedLocation}
               onChange={handleChange}
             />
           </div>
@@ -60,7 +79,7 @@ export default function Home() {
         </div>
         <div className={styles.btn}>
           <div className={styles.actualBtn}>
-            <Button solid={false} border title="Select my car" />
+            <Button solid={false} border title="Select my car" onClick={fetchAllVehicles} />
           </div>
         </div>
       </div>
