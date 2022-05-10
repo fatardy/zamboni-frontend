@@ -17,7 +17,7 @@
 [x] /verify-otp
 [x] /
 
-[ ] /users
+[x] /users
 
 [x] /location
 [x] /location/create
@@ -32,11 +32,11 @@
 
 [x] /invoice
 
-[ ] /payment
+[-] /payment
 
 [x] /coupon
 [x] /coupon/create
 [x] /coupon/add
 
-[ ] /firm
-[ ] /firm/create
+[x] /firm
+[x] /firm/create

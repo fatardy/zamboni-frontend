@@ -27,6 +27,9 @@ import AdminCoupon from '../admin-pages/admin-coupon';
 import AdminCouponCreate from '../admin-pages/admin-coupon-create';
 import AdminCouponAddUser from '../admin-pages/admin-coupon-add-user';
 import AdminCouponUsers from '../admin-pages/admin-coupon-users';
+import AdminUser from '../admin-pages/admin-user';
+import AdminFirm from '../admin-pages/admin-firm';
+import AdminFirmCreate from '../admin-pages/admin-firm-create';
 
 export default function Main() {
   return (
@@ -54,6 +57,9 @@ export default function Main() {
             <Route path="/admin/coupon/create" element={<AdminCouponCreate />} />
             <Route path="/admin/coupon/add-user" element={<AdminCouponAddUser />} />
             <Route path="/admin/coupon/users" element={<AdminCouponUsers />} />
+            <Route path="/admin/user" element={<AdminUser />} />
+            <Route path="/admin/firm" element={<AdminFirm />} />
+            <Route path="/admin/firm/create" element={<AdminFirmCreate />} />
           </Route>
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/verify-otp" element={<AdminVerifyOtp />} />
