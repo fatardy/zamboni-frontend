@@ -9,7 +9,7 @@ export default function AdminHome() {
 
       <div className={navDivStyles.navContainer}>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/locations">
+          <Link to="/admin/location">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Locations</p>
@@ -17,7 +17,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/vehicle-types">
+          <Link to="/admin/vehicle-type">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Vehicle Types</p>
@@ -25,7 +25,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/vehicles">
+          <Link to="/admin/vehicle">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Vehicles</p>
@@ -33,7 +33,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/trips">
+          <Link to="/admin/trip">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Trips</p>
@@ -44,7 +44,7 @@ export default function AdminHome() {
 
       <div className={navDivStyles.navContainer}>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/invoices">
+          <Link to="/admin/invoice">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Invoices</p>
@@ -52,7 +52,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/payments">
+          <Link to="/admin/payment">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Payments</p>
@@ -60,7 +60,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/coupons">
+          <Link to="/admin/coupon">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Coupons</p>
@@ -68,7 +68,7 @@ export default function AdminHome() {
           </Link>
         </div>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/firms">
+          <Link to="/admin/firm">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Firms</p>
@@ -80,7 +80,7 @@ export default function AdminHome() {
 
       <div className={navDivStyles.navContainer}>
         <div className={navDivStyles.outerBox}>
-          <Link to="/admin/users">
+          <Link to="/admin/user">
             <div className={navDivStyles.box}>
               <p className={navDivStyles.title}>→</p>
               <p className={navDivStyles.value}>Users</p>

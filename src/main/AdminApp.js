@@ -59,6 +59,14 @@ export default function AdminApp() {
               className={({ isActive }) => classNames([
                 { [styles.active]: isActive },
               ])}
+              to="/admin/"
+            >
+              Menu
+            </NavLink>
+            {/* <NavLink
+              className={({ isActive }) => classNames([
+                { [styles.active]: isActive },
+              ])}
               to="/admin/users"
             >
               Users
@@ -86,7 +94,7 @@ export default function AdminApp() {
               to="/admin/transactions"
             >
               Transactions
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
       </div>

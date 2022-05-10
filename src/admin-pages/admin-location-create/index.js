@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import styles from './admin-location-create.module.scss';
+import localStyles from './admin-location-create.module.scss';
+import styles from '../../styles/admin-create-form.module.scss';
 import TextInput from '../../components/text-input';
-// import { createUser } from '../../services/user';
 import Button from '../../components/button';
-// import CONFIG from '../../main/config';
 import { create } from '../../services/admin/location';
 
 export default function AdminLocationCreate() {
@@ -41,7 +40,7 @@ export default function AdminLocationCreate() {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.backCont}>
-          <Link to="/admin/locations">
+          <Link to="/admin/location">
             ← Go Back
           </Link>
         </div>
