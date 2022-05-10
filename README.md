@@ -19,14 +19,14 @@
 
 [ ] /users
 
-[ ] /location
-[ ] /location/create
+[x] /location
+[x] /location/create
 
-[ ] /vehicle-type
-[ ] /vehicle-type/create
+[x] /vehicle-type
+[x] /vehicle-type/create
 
-[ ] /vehicle
-[ ] /vehicle/create
+[x] /vehicle
+[x] /vehicle/create
 
 [ ] /trip
 
