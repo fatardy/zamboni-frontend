@@ -1,0 +1,45 @@
+@import '../../styles/colors.scss';
+
+.container {
+    margin: 32px 0;
+
+    .header {
+        background-color: $primary-color;
+        padding: 48px 0 32px 0;
+        border-radius: 8px;
+
+        .title {
+            color: $text-white;
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        .form {
+            
+            .top {
+                margin: 32px 224px 0 224px;
+                // width: 600px;
+            }
+            .datesDiv {
+                margin: 32px 224px 0 226px;
+                display: flex;
+                flex-direction: row;
+                width: 700px;
+            }
+        }
+
+        .btn {
+            margin: 48px 0 0 0;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            .actualBtn {
+                width: 300px;
+            }
+            
+        }
+    }
+}

@@ -6,7 +6,7 @@
 [x] /login
 [x] /verify-otp
 [x] /onboarding
-[ ] /profile
+[x] /profile
 [-] /profile/edit
 [ ] /
 [ ] /trip/create

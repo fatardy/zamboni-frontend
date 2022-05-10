@@ -9,6 +9,7 @@ import Login from '../pages/login';
 import VerifyOtp from '../pages/verify-otp';
 import Onboarding from '../pages/onboarding';
 import Account from '../pages/account';
+import Home from '../pages/home';
 
 import AdminApp from './AdminApp';
 import AdminHome from '../admin-pages/admin-home';
@@ -21,6 +22,7 @@ export default function Main() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route path="/" element={<Home />} />
             <Route path="/account" element={<Account />} />
           </Route>
           <Route path="/login" element={<Login />} />
