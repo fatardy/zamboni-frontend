@@ -22,7 +22,7 @@ export default function AdminApp() {
     }
 
     if (token == null) {
-      navigate('/login');
+      navigate('/admin/login');
     }
 
     // CONFIG.IS_ADMIN = true; why?

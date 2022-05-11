@@ -20,6 +20,7 @@ export default function AdminCouponCreate() {
 
   const fetchCreate = async () => {
     try {
+      console.log(data);
       await create(data);
       navigate('/admin/coupon');
     } catch (err) {

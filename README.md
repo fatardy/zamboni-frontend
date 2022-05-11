@@ -8,8 +8,8 @@
 [x] /onboarding
 [x] /profile
 [-] /profile/edit
-[ ] /
-[ ] /trip/create
+[x] /
+[x] /trip/create
 [ ] /trip/all
 
 ### admin
