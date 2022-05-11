@@ -26,4 +26,18 @@ export function create({
   });
 }
 
-export function dummy() {}
+export function getAllTrips() {
+  return axiosClient.get(`${prefix}/`);
+}
+
+export function endTrip({
+  tripId,
+  odoEnd,
+  finalDropDate,
+}) {
+  return axiosClient.post(`${prefix}/end`, {
+    tripId,
+    odoEnd,
+    finalDropDate,
+  });
+}
