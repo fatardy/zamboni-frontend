@@ -42,13 +42,19 @@ export default function TripCreate() {
         odoEnd: 100,
         // odoEnd: parseInt(vehicle.odoStart, 10) + parseInt(vehicle.odoLimit, 10) || 100,
       };
-      console.log('selected', selectedCoupon);
+      // console.log('selected', selectedCoupon);
       if (selectedCoupon != 0) {
         o.coupId = `${selectedCoupon}`;
       }
-      console.log('here is obj', o);
+      // console.log('here is obj', o);
       const { data } = await create(o);
-      console.log(data);
+      console.log(data?.data);
+      navigate('/pay/create', {
+        state: {
+          invId: data?.data?.invoice.insertId,
+          amount: data?.data?.amount,
+        },
+      });
     } catch (err) {
       toast(err?.response?.data?.error?.message || 'Something went wrong');
       console.log(err);

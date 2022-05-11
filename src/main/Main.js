@@ -12,6 +12,7 @@ import Account from '../pages/account';
 import Home from '../pages/home';
 import TripCreate from '../pages/trip-create';
 import Trip from '../pages/trip';
+import PayCreate from '../pages/pay-create';
 
 import AdminApp from './AdminApp';
 import AdminHome from '../admin-pages/admin-home';
@@ -43,6 +44,7 @@ export default function Main() {
             <Route path="/trip" element={<Trip />} />
             <Route path="/trip/create" element={<TripCreate />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/pay/create" element={<PayCreate />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/verify-otp" element={<VerifyOtp />} />

@@ -48,7 +48,7 @@ export default function App() {
               className={({ isActive }) => classNames([
                 { [styles.active]: isActive },
               ])}
-              to="/trips"
+              to="/trip"
             >
               Trips
             </NavLink>

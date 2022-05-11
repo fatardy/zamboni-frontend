@@ -49,8 +49,13 @@ export default function Trip() {
     }
   };
 
-  const payTap = (tripId) => {
-
+  const payTap = ({ invId, amount }) => {
+    navigate('/pay/create', {
+      state: {
+        invId,
+        amount,
+      },
+    });
   };
 
   const endTap = (id) => {
@@ -122,7 +127,7 @@ export default function Trip() {
                 <td>
                   <Button
                     title="pay"
-                    onClick={() => { payTap(x.tripId); }}
+                    onClick={() => { payTap({ invId: x.invId, amount: x.amount }); }}
                     solid={false}
                   />
                 </td>
