@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { differenceInHours, subDays } from 'date-fns';
 import Button from '../../components/button';
 import Dropdown from '../../components/drop-down';
 import styles from './home.module.scss';
 import { getAllLocations, getAllVehicles } from '../../services/user/public';
 import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
-import { differenceInHours, subDays } from 'date-fns';
+import CONFIG from '../../main/config';
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const [locations, setLocations] = useState([
-    { label: 'Select Pickup Location', value: '0' },
+    { label: 'Select Pickup Location', value: NaN },
   ]);
-  const [selectedLocation, setSelectedLocation] = useState('Select Pickup Location');
+  const [selectedLocation, setSelectedLocation] = useState(NaN);
   const [pickDate, setPickDate] = useState(new Date());
   const [dropDate, setDropDate] = useState(new Date());
   const [vehicles, setVehicles] = useState([]);
@@ -33,10 +37,18 @@ export default function Home() {
   }
 
   async function fetchAllVehicles() {
+    if (Number.isNaN(selectedLocation)) {
+      toast('Please select a location! :)');
+      return;
+    }
+
     try {
       const { data } = await getAllVehicles({ locId: selectedLocation });
       // console.log(data?.data);
       setVehicles(data?.data);
+      if (data?.data.length === 0) {
+        toast('Oops! No vehicles available at this location.. Please try another..');
+      }
     } catch (err) {
       toast(err);
     }
@@ -49,6 +61,20 @@ export default function Home() {
   // useEffect(() => {
   //   fetchAllVehicles();
   // }, [selectedLocation]);
+
+  const redirect = (vehicle) => {
+    if (CONFIG.AUTH_TOKEN == null) {
+      navigate('/login');
+    } else {
+      navigate('/trip/create', {
+        state: {
+          vehicle,
+          pickDate,
+          dropDate,
+        },
+      });
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -91,6 +117,11 @@ export default function Home() {
         </div>
       </div>
 
+      {vehicles.length > 0 && (
+        <div>
+          <h1 className={styles.mainHead}>Available Vehicles</h1>
+        </div>
+      )}
       <div className={styles.list}>
         {vehicles.map((x) => (
           <div className={styles.box} key={x.vehId}>
@@ -119,7 +150,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className={styles.btn}>
-                  <Button solid title="  Book Car  " />
+                  <Button solid title="  Book Car  " onClick={() => { redirect(x); }} />
                 </div>
               </div>
             </div>

@@ -1,0 +1,57 @@
+@import '../../styles/colors.scss';
+
+.container {
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    margin: 32px 0 64px 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    .card {
+        width: 50vw;
+        padding: 32px 24px 12px 24px;
+        border-radius: $card-border-radius;
+        border: 1px solid $border-color;
+        box-shadow: $card-hover-box-shadow;
+
+
+        .imgCont {
+            // margin-top: 32px;
+            margin-bottom: 48px;
+            .img {
+                width: 100%;
+                height: 200px;
+                border-radius: $card-border-radius;
+                object-fit: cover;
+            }
+        }
+        .details {
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            .name {
+                font-size: 24px;
+            }
+        }
+
+        .more {
+            .price {
+                margin: 12px 0 0 0;
+            }
+            .totalLbl {
+                margin: 24px 0 0 0;
+                font-size: 22px;
+            }
+            .total {
+                font-size: 28px;
+            }
+        }
+
+        .btn {
+            margin: 24px 0 0 0;
+        }
+    }
+}
