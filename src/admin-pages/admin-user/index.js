@@ -30,7 +30,7 @@ export default function AdminUser() {
 
   const fetchDelete = async ({ id }) => {
     try {
-      await makeAdmin({ userId: id });
+      await makeAdmin({ userId: `${id}` });
       fetchData();
     } catch (err) {
       toast(err);

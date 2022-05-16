@@ -49,6 +49,7 @@ export default function TripCreate() {
       // console.log('here is obj', o);
       const { data } = await create(o);
       console.log(data?.data);
+      toast('Happy driving! Trip created successfully!');
       navigate('/pay/create', {
         state: {
           invId: data?.data?.invoice.insertId,
@@ -127,7 +128,7 @@ export default function TripCreate() {
           </p>
           <p className={styles.total}>
             $
-            {parseInt(vehicle.rate, 10) * (differenceInHours(dropDate, pickDate) / 24)}
+            {parseFloat(parseInt(vehicle.rate, 10) * (differenceInHours(dropDate, pickDate) / 24)).toFixed(2)}
           </p>
         </div>
         <div className={styles.couponCont}>

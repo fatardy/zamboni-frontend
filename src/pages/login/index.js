@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import styles from '../../styles/login.module.scss';
 import TextInput from '../../components/text-input';
@@ -9,7 +9,7 @@ import { authorize } from '../../services/user/auth';
 export default function Login() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('asdf@asdf.com');
+  const [email, setEmail] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   function validateEmail(e) {
@@ -51,7 +51,10 @@ export default function Login() {
       <div className={styles.card}>
         <div className={styles.header}>
           <p className={styles.text}>Welcome to</p>
-          <p className={styles.logo}>Zamboni</p>
+          <Link to="/">
+            <p className={styles.logo}>Zamboni</p>
+
+          </Link>
         </div>
         <div className={styles.form}>
           <TextInput label="Email" value={email} onChange={(e) => { setEmail(e.target.value); clear(); }} />

@@ -11,6 +11,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './home.scss';
 import CONFIG from '../../main/config';
 
+function addDays(days, date = new Date()) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -19,7 +25,7 @@ export default function Home() {
   ]);
   const [selectedLocation, setSelectedLocation] = useState(NaN);
   const [pickDate, setPickDate] = useState(new Date());
-  const [dropDate, setDropDate] = useState(new Date());
+  const [dropDate, setDropDate] = useState(addDays(1));
   const [vehicles, setVehicles] = useState([]);
 
   const handleChange = (event) => {
@@ -112,7 +118,8 @@ export default function Home() {
         </div>
         <div className={styles.btn}>
           <div className={styles.actualBtn}>
-            <Button solid={false} border title="Select my car" onClick={fetchAllVehicles} />
+            {/* <Button solid={false} border title="Select my car" onClick={fetchAllVehicles} /> */}
+            <button type="button" className={styles.button} onClick={fetchAllVehicles}>Select my car</button>
           </div>
         </div>
       </div>
@@ -140,7 +147,7 @@ export default function Home() {
                 <div className={styles.price}>
                   <p className={styles.total}>
                     $
-                    {parseInt(x.rate, 10) * (differenceInHours(dropDate, pickDate) / 24)}
+                    {parseFloat(parseInt(x.rate, 10) * (differenceInHours(dropDate, pickDate) / 24)).toFixed(2)}
                   </p>
                   <p className={styles.day}>
                     $

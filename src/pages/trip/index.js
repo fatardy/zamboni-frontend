@@ -20,8 +20,12 @@ export default function Trip() {
       console.log(resp?.data?.data);
       setData(resp?.data?.data || []);
     } catch (err) {
-      // console.log(err);
       toast(err);
+      console.log('here', err?.response?.status);
+      if (err?.response?.status === 403) {
+        navigate('/login');
+        toast('Please log in first..');
+      }
     }
   };
 

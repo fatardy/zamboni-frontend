@@ -9,7 +9,7 @@ import { authorize } from '../../services/admin/auth';
 export default function AdminLogin() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('admin@zamboni.com');
+  const [email, setEmail] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
 
   function validateEmail(e) {
